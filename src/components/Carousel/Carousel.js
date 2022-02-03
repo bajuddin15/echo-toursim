@@ -2,12 +2,12 @@ import React from "react";
 
 function Carousel() {
   const url1 =
-    "https://wttc.org/DesktopModules/MVC/NewsArticleList/images/141_20201013185512_Consumer%20Survey%20Finds%2070%20Percent%20of%20Travelers%20Plan%20to%20Holiday%20in%202021.jpg";
+    "https://st3.depositphotos.com/29721250/32094/i/1600/depositphotos_320940570-stock-photo-beautiful-winter-landscape-view-mountains.jpg";
 
   const url2 =
-    "https://higherlogicdownload.s3.amazonaws.com/SRAINTERNATIONAL/UploadedImages/167e255a-8759-4a2f-92f6-591d6d8f7afb/Catalyst-pictures/Text-body-images/april2021/Picture_2_Travel.jpeg";
+    "https://media.istockphoto.com/photos/life-in-rural-india-picture-id468861698?s=612x612";
   const url3 =
-    "https://www.dailynews.lk/sites/default/files/news/2021/05/10/05-Focus-01.jpg";
+    "https://zameenblog.s3.amazonaws.com/blog/wp-content/uploads/2019/04/cover-image-29.jpg";
 
   return (
     <div className="container-fluid px-5 mt-5">

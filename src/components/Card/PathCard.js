@@ -56,7 +56,7 @@ const useStyles = makeStyles({
   },
 });
 
-export default function PathCard() {
+export default function PathCard({ id, name }) {
   const imageUrl =
     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRg5SVaJAaES6qIKj3-6LsR4RRnu0VrF4FiMQ&usqp=CAU";
 
@@ -70,7 +70,7 @@ export default function PathCard() {
             gutterBottom
             variant="h4"
             component="div">
-            1
+            {id}
           </Typography>
         </Box>
 
@@ -78,7 +78,7 @@ export default function PathCard() {
           className={classes.description}
           variant="body2"
           color="text.secondary">
-          Apply For The Program
+          {name}
         </Typography>
       </CardContent>
       <CardActions className={classes.card__buttons}>

@@ -1,10 +1,16 @@
 import React from "react";
 import "./HomeScreen.css";
+import cardData from "../components/Card/cardData";
+import teamCardData from "../components/Card/teamCardData";
 import { Box, Typography, makeStyles, Grid } from "@material-ui/core";
 import Carousel from "../components/Carousel/Carousel";
 import PathCard from "../components/Card/PathCard";
 import TeamCard from "../components/Card/TeamCard";
 import IntroVideo from "../components/Video/IntroVideo";
+import SearchForm from "../components/Form/SearchForm";
+import ExploreCities from "../components/ExploreCities/ExploreCities";
+import TextCarousel from "../components/Carousel/TextCarousel";
+import Popup from "../components/Popup/Popup";
 
 const useStyles = makeStyles({
   pathway: {
@@ -61,32 +67,33 @@ function HomeScreen() {
             borderRadius: "30px",
           }}>
           <Box className="row my-4">
-            <Box className="col-lg-2 col-md-4 my-4 ">
-              <PathCard />
-            </Box>
-            <Box className="col-lg-2 col-md-4 my-4">
-              <PathCard />
-            </Box>
-            <Box className="col-lg-2 col-md-4 my-4">
-              <PathCard />
-            </Box>
-            <Box className="col-lg-2 col-md-4 my-4">
-              <PathCard />
-            </Box>
-            <Box className="col-lg-2 col-md-4 my-4">
-              <PathCard />
-            </Box>
-            <Box className="col-lg-2 col-md-4 my-4">
-              <PathCard />
-            </Box>
+            {cardData.map((data) => {
+              return (
+                <Box className="col-lg-2 col-md-4 my-4 ">
+                  <PathCard id={data.id} name={data.name} />
+                </Box>
+              );
+            })}
           </Box>
         </Box>
       </Box>
+
+      {/* Exlore and Search States and Cities */}
+      <SearchForm />
+
+      {/* Explore Cities */}
+      <ExploreCities />
+
+      {/* Popup demo */}
+      {/* <Popup /> */}
 
       {/* Intro Video */}
       <IntroVideo />
 
       {/* story tellers */}
+
+      {/* tell story through carousel */}
+      <TextCarousel />
 
       {/* Meet Our Teams */}
       <Box className={classes.our__teams}>
@@ -112,18 +119,18 @@ function HomeScreen() {
           </Typography>
 
           <Box className="row my-4">
-            <Box className="col-lg-3 col-md-4 my-4">
-              <TeamCard />
-            </Box>
-            <Box className="col-lg-3 col-md-4 my-4">
-              <TeamCard />
-            </Box>
-            <Box className="col-lg-3 col-md-4 my-4">
-              <TeamCard />
-            </Box>
-            <Box className="col-lg-3 col-md-4 my-4">
-              <TeamCard />
-            </Box>
+            {teamCardData.map((data) => {
+              return (
+                <Box className="col-md-3 my-4 ">
+                  <TeamCard
+                    id={data.id}
+                    name={data.name}
+                    path={data.path}
+                    work={data.work}
+                  />
+                </Box>
+              );
+            })}
           </Box>
         </Box>
       </Box>

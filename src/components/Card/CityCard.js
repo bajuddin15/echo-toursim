@@ -11,6 +11,7 @@ import {
 const useStyles = makeStyles({
   container: {
     borderRadius: "50px",
+    border: "1px solid #D3D3D3",
   },
   card__actionarea: {
     display: "flex",
@@ -19,10 +20,8 @@ const useStyles = makeStyles({
     flexDirection: "column",
   },
   card__image: {
-    width: "350px",
+    width: "100%",
     height: "350px",
-    padding: "50px",
-    borderRadius: "999px",
   },
   card__body: {
     height: "150px",
@@ -39,18 +38,12 @@ const useStyles = makeStyles({
     letterSpacing: "1px",
   },
 });
-function TeamCard({ id, name, path, work }) {
+function CityCard({ name, imageUrl }) {
   const classes = useStyles();
   return (
     <Card sx={{ maxWidth: 345 }} className={classes.container}>
       <CardActionArea className={classes.card__actionarea}>
-        <CardMedia
-          component="img"
-          height="140"
-          image={path}
-          alt="green iguana"
-          className={classes.card__image}
-        />
+        <img src={imageUrl} alt={name} className={classes.card__image} />
         <CardContent className={classes.card__body}>
           <Typography
             gutterBottom
@@ -63,7 +56,7 @@ function TeamCard({ id, name, path, work }) {
             variant="body2"
             color="text.secondary"
             className={classes.description}>
-            {work}
+            Useful info of this city
           </Typography>
           <hr />
         </CardContent>
@@ -72,4 +65,4 @@ function TeamCard({ id, name, path, work }) {
   );
 }
 
-export default TeamCard;
+export default CityCard;
